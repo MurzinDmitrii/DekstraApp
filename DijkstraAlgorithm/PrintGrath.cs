@@ -19,7 +19,14 @@ namespace DekstraAlgorithm
                 string pred = "нет предка";
                 if(p.predPoint != null)
                     pred = p.predPoint.Name;
-                retListOfPoints.Add(string.Format("Точка={0}, вес={1}, предок={2}", p.Name, p.ValueMetka, pred));
+                if (p.ValueMetka != int.MaxValue)
+                {
+                    retListOfPoints.Add(string.Format("Точка={0}, вес={1}, предок={2}", p.Name, p.ValueMetka, pred));
+                }
+                else
+                {
+                    retListOfPoints.Add(string.Format("Точка={0}, вес=\u221E, предок={2}", p.Name, p.ValueMetka, pred));
+                }
             }
             return retListOfPoints;
         }
@@ -38,7 +45,14 @@ namespace DekstraAlgorithm
                         s += string.Format("{0}-", p1.Name);
                     }
                     d += p.ValueMetka;
-                    retListOfPointsAndPaths.Add(string.Format("Для точки {0} минимальный путь из точки {1} = {3}{2}(путь = {4})", p.Name, da.BeginPoint.Name, Reverse(s), da.BeginPoint.Name, d));
+                    if (p.ValueMetka != int.MaxValue)
+                    {
+                        retListOfPointsAndPaths.Add(string.Format("Для точки {0} минимальный путь из точки {1} = {3}{2}(путь = {4})", p.Name, da.BeginPoint.Name, Reverse(s), da.BeginPoint.Name, d));
+                    }
+                    else
+                    {
+                        retListOfPointsAndPaths.Add(string.Format("Для точки {0} минимальный путь из точки {1} = {3}{2}(путь = \u221E)", p.Name, da.BeginPoint.Name, Reverse(s), da.BeginPoint.Name, d));
+                    }
                 }
 
             }

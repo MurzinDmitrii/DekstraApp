@@ -14,7 +14,7 @@ namespace DekstraAlgorithm
     {
         public Point FirstPoint { get; private set; }
         public Point SecondPoint { get; private set; }
-        public double Weight { get; private set; }
+        public double Weight { get; set; }
 
         public Rebro(Point first, Point second, double valueOfWeight)
         {

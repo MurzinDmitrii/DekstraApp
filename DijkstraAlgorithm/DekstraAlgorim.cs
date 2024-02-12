@@ -137,7 +137,7 @@ namespace DekstraAlgorithm
             List<Point> listOfpoints = new List<Point>();
             Point tempp = new Point();
             tempp = end;
-            while (tempp != this.BeginPoint)
+            while (tempp != this.BeginPoint && tempp != null)
             {
                 listOfpoints.Add(tempp);
                 tempp = tempp.predPoint;

@@ -10,3 +10,15 @@ C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\refint\DekstraA
 C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.pdb
 C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\ref\DekstraAlgorithm.dll
 C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.csproj.AssemblyReference.cache
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\bin\Debug\net7.0\DekstraAlgorithm.deps.json
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\bin\Debug\net7.0\DekstraAlgorithm.dll
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\bin\Debug\net7.0\DekstraAlgorithm.pdb
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.csproj.AssemblyReference.cache
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.AssemblyInfo.cs
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.dll
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\refint\DekstraAlgorithm.dll
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\DekstraAlgorithm.pdb
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DijkstraAlgorithm\obj\Debug\net7.0\ref\DekstraAlgorithm.dll

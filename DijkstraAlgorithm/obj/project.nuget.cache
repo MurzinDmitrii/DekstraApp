@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TgFYO+6y3fkSs8TOEf5N3+U4iunGLo4MJ1GLg7C4JpmC858ko4e5EQ0A0SfMrysvd+c5ibR5WS8CYUaeWPA7dw==",
+  "dgSpecHash": "4oy6IiBXlaEW60cqIpkg313+4hUT0tNb+aD7GAEpZNI7Yp2cleQeVsYXnV2/pvh11RhoNcdwILDfHqu30wq54w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dmitrii\\source\\repos\\DijkstraAlgorithm\\DekstraAlgorithm.csproj",
+  "projectFilePath": "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DijkstraAlgorithm\\DekstraAlgorithm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dmitrii\\.nuget\\packages\\aspose.cells\\24.2.0\\aspose.cells.24.2.0.nupkg.sha512",
     "C:\\Users\\Dmitrii\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

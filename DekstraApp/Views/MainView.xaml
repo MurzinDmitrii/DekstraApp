@@ -12,13 +12,16 @@
         <StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="x:" Margin="5"/>
-                <TextBox x:Name="xBox" Margin="5" Width="50"/>
+                <TextBox x:Name="xBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
                 <TextBlock Text="y:" Margin="5"/>
-                <TextBox x:Name="yBox" Margin="5" Width="50"/>
+                <TextBox x:Name="yBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
                 <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" Margin="5"/>
-                <TextBox x:Name="BeginPointBox" Margin="5" Width="50"/>
+                <TextBlock Text="Начальная точка" Margin="5"/>
+                <TextBox x:Name="BeginPointBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
                 <Button x:Name="DekstraButton" Content="Посчитать" Click="DekstraButton_Click"  Margin="5"/>
                 <Button x:Name="LoadButton" Content="Загрузить" Click="LoadButton_Click"  Margin="5"/>
+                <TextBlock Text="Изменение длинны" Margin="5"/>
+                <TextBox x:Name="ChangeBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <StackPanel Width="300" Height="300" Margin="10" Background="AliceBlue">
@@ -39,9 +42,9 @@
                                     <TextBlock Text="{Binding y}" Margin="5"/>
                                     <StackPanel.ContextMenu>
                                         <ContextMenu>
-                                            <MenuItem Header="Удалить" Click="MenuItem_Click"/>
-                                            <MenuItem Header="Выбрать точку" Click="MenuItem_Click_1"/>
-                                            <MenuItem Header="Соединить" Click="MenuItem_Click_2"/>
+                                            <MenuItem x:Name="DeleteMenu" Header="Удалить" Click="DeleteMenu_Click"/>
+                                            <MenuItem x:Name="ChooseMenu" Header="Выбрать точку" Click="ChooseMenu_Click"/>
+                                            <MenuItem x:Name="JoinMenu" Header="Соединить" Click="JoinMenu_Click"/>
                                         </ContextMenu>
                                     </StackPanel.ContextMenu>
                                 </StackPanel>
@@ -59,6 +62,12 @@
                                     <TextBlock Text=" - " Margin="5"/>
                                     <TextBlock Text="{Binding SecondPoint.x}" Margin="5"/>
                                     <TextBlock Text="{Binding SecondPoint.y}" Margin="5"/>
+                                    <StackPanel.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem x:Name="DeleteEdgeMenu" Header="Удалить" Click="DeleteEdgeMenu_Click"/>
+                                            <MenuItem x:Name="ChangeMenu" Header="Поменять значение" Click="ChangeMenu_Click"/>
+                                        </ContextMenu>
+                                    </StackPanel.ContextMenu>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

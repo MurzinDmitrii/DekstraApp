@@ -61,23 +61,8 @@ namespace DekstraApp.Views
             line.X2 = x+4;
             line.Y1 = y;
             line.Y2 = y;
-            if(myCanvasSize.x1 < line.X2)
-            {
-                myCanvasSize.x1 = Convert.ToInt32(line.X2);
-            }
-            if (myCanvasSize.y1 < line.Y2)
-            {
-                myCanvasSize.y1 = Convert.ToInt32(line.Y2);
-            }
+            
             MyCanvas.Children.Add(line);
-            if(myCanvasSize.x1 > myCanvasSize.y1)
-            {
-                MyCanvasPanel.Width = myCanvasSize.x1;
-            }
-            else
-            {
-                MyCanvasPanel.Width = myCanvasSize.y1;
-            }
             MyCanvasPanel.DataContext = myCanvasSize;
         }
 
@@ -96,73 +81,6 @@ namespace DekstraApp.Views
             DrawPoint(point.x, point.y);
             Text(point);
             name++;
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            var itemSendet = (MenuItem)sender;
-            var itemDel = itemSendet.DataContext as DekstraAlgorithm.Point;
-            PointsList.Items.Remove(itemDel);
-
-
-
-            MyCanvas.Children.Clear();
-            foreach (DekstraAlgorithm.Point item in PointsList.Items)
-            {
-                Line line = new Line();
-                line.Visibility = System.Windows.Visibility.Visible;
-                line.StrokeThickness = 8;
-                line.Stroke = System.Windows.Media.Brushes.Black;
-                line.X1 = item.x - 4;
-                line.X2 = item.x + 4;
-                line.Y1 = item.y;
-                line.Y2 = item.y;
-                MyCanvas.Children.Add(line);
-                Text(item);
-            }
-            foreach (DekstraAlgorithm.Rebro item in EdgesList.Items)
-            {
-                Line line = new();
-                line.Visibility = System.Windows.Visibility.Visible;
-                line.StrokeThickness = 1;
-                line.Stroke = System.Windows.Media.Brushes.Black;
-                line.X1 = item.FirstPoint.x;
-                line.X2 = item.SecondPoint.x;
-                line.Y1 = item.FirstPoint.y;
-                line.Y2 = item.SecondPoint.y;
-                MyCanvas.Children.Add(line);
-                PrintSize(item);
-            }
-        }
-
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            var itemSendet = (MenuItem)sender;
-            selectedPoint = itemSendet.DataContext as DekstraAlgorithm.Point;
-        }
-
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
-        {
-            var itemSendet = (MenuItem)sender;
-            var selectedPoint2 = itemSendet.DataContext as DekstraAlgorithm.Point;
-            double len = Math.Sqrt(Math.Pow((selectedPoint.x - selectedPoint2.x), 2) + Math.Pow((selectedPoint.y - selectedPoint2.y), 2));
-            Rebro rebro = new (selectedPoint, selectedPoint2, len);
-            Line line = new ();
-            line.Visibility = System.Windows.Visibility.Visible;
-            line.StrokeThickness = 1;
-            line.Stroke = System.Windows.Media.Brushes.Black;
-            line.X1 = selectedPoint.x;
-            line.X2 = selectedPoint2.x;
-            line.Y1 = selectedPoint.y;
-            line.Y2 = selectedPoint2.y;
-            MyCanvas.Children.Add(line);
-            EdgesList.Items.Add(rebro);
-            PrintSize(rebro);
-            foreach(var item in PointsList.Items)
-            {
-                Point a = item as Point;
-                Text(a);
-            }
         }
 
         private void DekstraButton_Click(object sender, RoutedEventArgs e)
@@ -242,7 +160,87 @@ namespace DekstraApp.Views
             {
                 EdgesList.Items.Add(item);
             }
+            name = PointsList.Items.Count;
+            Load();
+        }
 
+        private void DeleteMenu_Click(object sender, RoutedEventArgs e)
+        {
+            var itemSendet = (MenuItem)sender;
+            var itemDel = itemSendet.DataContext as DekstraAlgorithm.Point;
+            PointsList.Items.Remove(itemDel);
+
+            List<Rebro> list = new List<Rebro>();
+            foreach (var item in EdgesList.Items)
+            {
+                Rebro rebro = item as Rebro;
+                list.Add(rebro);
+            }
+
+            foreach (var item in list)
+            {
+                Rebro rebro = item as Rebro;
+                if(rebro.FirstPoint.Name == itemDel.Name || rebro.SecondPoint.Name == itemDel.Name)
+                {
+                    EdgesList.Items.Remove(item);
+                }
+            }
+
+            Load();
+        }
+
+        private void ChooseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            var itemSendet = (MenuItem)sender;
+            selectedPoint = itemSendet.DataContext as DekstraAlgorithm.Point;
+        }
+
+        private void JoinMenu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                List<Rebro> list = new List<Rebro>();
+                foreach (var item in EdgesList.Items)
+                {
+                    Rebro rebro1 = item as Rebro;
+                    list.Add(rebro1);
+                }
+                var itemSendet = (MenuItem)sender;
+                var selectedPoint2 = itemSendet.DataContext as DekstraAlgorithm.Point;
+                double len = Math.Sqrt(Math.Pow((selectedPoint.x - selectedPoint2.x), 2) + Math.Pow((selectedPoint.y - selectedPoint2.y), 2));
+                Rebro rebro = new(selectedPoint, selectedPoint2, len);
+
+                if (list.FirstOrDefault(c => c.FirstPoint == rebro.FirstPoint && c.SecondPoint == rebro.SecondPoint) != null)
+                {
+                    return;
+                }
+
+                Line line = new();
+                line.Visibility = System.Windows.Visibility.Visible;
+                line.StrokeThickness = 1;
+                line.Stroke = System.Windows.Media.Brushes.Black;
+                line.X1 = selectedPoint.x;
+                line.X2 = selectedPoint2.x;
+                line.Y1 = selectedPoint.y;
+                line.Y2 = selectedPoint2.y;
+                MyCanvas.Children.Add(line);
+                EdgesList.Items.Add(rebro);
+                PrintSize(rebro);
+                foreach (var item in PointsList.Items)
+                {
+                    Point a = item as Point;
+                    Text(a);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Выберите корректное ребро!","Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void Load()
+        {
+            MyCanvas.Children.Clear();
             foreach (DekstraAlgorithm.Point item in PointsList.Items)
             {
                 Line line = new Line();
@@ -255,8 +253,25 @@ namespace DekstraApp.Views
                 line.Y2 = item.y;
                 MyCanvas.Children.Add(line);
                 Text(item);
-            }
 
+                if (myCanvasSize.x1 < line.X2)
+                {
+                    myCanvasSize.x1 = Convert.ToInt32(line.X2);
+                }
+                if (myCanvasSize.y1 < line.Y2)
+                {
+                    myCanvasSize.y1 = Convert.ToInt32(line.Y2);
+                }
+
+                if (myCanvasSize.x1 > myCanvasSize.y1)
+                {
+                    MyCanvasPanel.Width = myCanvasSize.x1;
+                }
+                else
+                {
+                    MyCanvasPanel.Width = myCanvasSize.y1;
+                }
+            }
             foreach (DekstraAlgorithm.Rebro item in EdgesList.Items)
             {
                 Line line = new();
@@ -269,6 +284,38 @@ namespace DekstraApp.Views
                 line.Y2 = item.SecondPoint.y;
                 MyCanvas.Children.Add(line);
                 PrintSize(item);
+            }
+        }
+
+        private void DeleteEdgeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            var itemSendet = (MenuItem)sender;
+            var itemDel = itemSendet.DataContext as DekstraAlgorithm.Rebro;
+            EdgesList.Items.Remove(itemDel);
+
+            Load();
+        }
+
+        private void ChangeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var itemSendet = (MenuItem)sender;
+                var itemChange = itemSendet.DataContext as DekstraAlgorithm.Rebro;
+                itemChange.Weight = Convert.ToInt32(ChangeBox.Text);
+                Load();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Введите длину!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void TextBlock_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Char.IsDigit(e.Text, 0))
+            {
+                e.Handled = true;
             }
         }
     }

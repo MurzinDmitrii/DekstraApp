@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IuKqCY/S/ocmPOKhjODA9jfWbejFDSvvdZjT44Zjpx4qz9UWLac7P6sX2KRB58iZv8Z9g6/UcDYl1Tw4LmVLfg==",
+  "dgSpecHash": "f3MbuqNoR50X31VfWiOoeiFpJdEbKg8udp0U1csB43YLyvqKhqrWZ8SdZ1x411ErBLA0yQ8fqDex3OegTmZMiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dmitrii\\source\\repos\\DekstraApp\\DekstraApp.csproj",
+  "projectFilePath": "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DekstraApp\\DekstraApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dmitrii\\.nuget\\packages\\aspose.cells\\24.2.0\\aspose.cells.24.2.0.nupkg.sha512",
     "C:\\Users\\Dmitrii\\.nuget\\packages\\docx\\3.0.0\\docx.3.0.0.nupkg.sha512",
