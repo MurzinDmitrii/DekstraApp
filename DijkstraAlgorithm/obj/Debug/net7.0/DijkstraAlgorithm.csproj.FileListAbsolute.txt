@@ -1,0 +1,11 @@
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\bin\Debug\net7.0\DijkstraAlgorithm.deps.json
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\bin\Debug\net7.0\DijkstraAlgorithm.dll
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\bin\Debug\net7.0\DijkstraAlgorithm.pdb
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DijkstraAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DijkstraAlgorithm.AssemblyInfoInputs.cache
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DijkstraAlgorithm.AssemblyInfo.cs
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DijkstraAlgorithm.csproj.CoreCompileInputs.cache
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DijkstraAlgorithm.dll
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\refint\DijkstraAlgorithm.dll
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\DijkstraAlgorithm.pdb
+C:\Users\Dmitrii\source\repos\DijkstraAlgorithm\obj\Debug\net7.0\ref\DijkstraAlgorithm.dll
