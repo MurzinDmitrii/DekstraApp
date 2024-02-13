@@ -38,8 +38,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding x}" Margin="5"/>
-                                    <TextBlock Text="{Binding y}" Margin="5"/>
+                                    <TextBlock Text="{Binding Name}" Margin="5"/>
                                     <StackPanel.ContextMenu>
                                         <ContextMenu>
                                             <MenuItem x:Name="DeleteMenu" Header="Удалить" Click="DeleteMenu_Click"/>
@@ -57,11 +56,9 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding FirstPoint.x}" Margin="5"/>
-                                    <TextBlock Text="{Binding FirstPoint.y}" Margin="5"/>
+                                    <TextBlock Text="{Binding FirstPoint.Name}" Margin="5"/>
                                     <TextBlock Text=" - " Margin="5"/>
-                                    <TextBlock Text="{Binding SecondPoint.x}" Margin="5"/>
-                                    <TextBlock Text="{Binding SecondPoint.y}" Margin="5"/>
+                                    <TextBlock Text="{Binding SecondPoint.Name}" Margin="5"/>
                                     <StackPanel.ContextMenu>
                                         <ContextMenu>
                                             <MenuItem x:Name="DeleteEdgeMenu" Header="Удалить" Click="DeleteEdgeMenu_Click"/>

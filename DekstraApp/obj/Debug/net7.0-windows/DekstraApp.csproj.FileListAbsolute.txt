@@ -58,3 +58,5 @@ C:\Users\Dmitrii\Desktop\УП мо мат.методам\DekstraApp\obj\Debug\ne
 C:\Users\Dmitrii\Desktop\УП мо мат.методам\DekstraApp\obj\Debug\net7.0-windows\DekstraApp.pdb
 C:\Users\Dmitrii\Desktop\УП мо мат.методам\DekstraApp\obj\Debug\net7.0-windows\DekstraApp.genruntimeconfig.cache
 C:\Users\Dmitrii\Desktop\УП мо мат.методам\DekstraApp\obj\Debug\net7.0-windows\ref\DekstraApp.dll
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DekstraApp\obj\Debug\net7.0-windows\DekstraApp.Properties.Resources.resources
+C:\Users\Dmitrii\Desktop\УП мо мат.методам\DekstraApp\obj\Debug\net7.0-windows\DekstraApp.csproj.GenerateResource.cache

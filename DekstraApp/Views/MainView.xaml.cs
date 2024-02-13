@@ -85,45 +85,52 @@ namespace DekstraApp.Views
 
         private void DekstraButton_Click(object sender, RoutedEventArgs e)
         {
-            List<DekstraAlgorithm.Point> points = new List<DekstraAlgorithm.Point>();
-            foreach (DekstraAlgorithm.Point item in PointsList.Items)
+            try
             {
-                points.Add(item);
-            }
-            List<DekstraAlgorithm.Rebro> edges = new List<DekstraAlgorithm.Rebro>();
-            foreach (DekstraAlgorithm.Rebro item in EdgesList.Items)
-            {
-                edges.Add(item);
-            }
-
-            DekstraAlgorim dekstraAlgorim = new DekstraAlgorim(points.ToArray(), edges.ToArray());
-            dekstraAlgorim.BeginPoint = points[Convert.ToInt32(BeginPointBox.Text)];
-
-            foreach(var item in dekstraAlgorim.points)
-            {
-                if(item != dekstraAlgorim.BeginPoint)
+                List<DekstraAlgorithm.Point> points = new List<DekstraAlgorithm.Point>();
+                foreach (DekstraAlgorithm.Point item in PointsList.Items)
                 {
-                    item.ValueMetka = int.MaxValue;
+                    points.Add(item);
                 }
+                List<DekstraAlgorithm.Rebro> edges = new List<DekstraAlgorithm.Rebro>();
+                foreach (DekstraAlgorithm.Rebro item in EdgesList.Items)
+                {
+                    edges.Add(item);
+                }
+
+                DekstraAlgorim dekstraAlgorim = new DekstraAlgorim(points.ToArray(), edges.ToArray());
+                dekstraAlgorim.BeginPoint = points[Convert.ToInt32(BeginPointBox.Text)];
+
+                foreach (var item in dekstraAlgorim.points)
+                {
+                    if (item != dekstraAlgorim.BeginPoint)
+                    {
+                        item.ValueMetka = int.MaxValue;
+                    }
+                }
+
+                dekstraAlgorim.AlgoritmRun(dekstraAlgorim.BeginPoint);
+                List<string> printPoints = PrintGrath.PrintAllPoints(dekstraAlgorim);
+                List<string> printPaths = PrintGrath.PrintAllMinPaths(dekstraAlgorim);
+                string otvet = "";
+
+                foreach (var item in printPoints)
+                {
+                    otvet += item + "\n";
+                }
+                foreach (var item in printPaths)
+                {
+                    otvet += item + "\n";
+                }
+
+                MessageBox.Show(otvet);
+                WorkWithWord.SavePhoto(MyCanvas);
+                WorkWithWord.PrintPhoto(otvet);
             }
-
-            dekstraAlgorim.AlgoritmRun(dekstraAlgorim.BeginPoint);
-            List<string> printPoints = PrintGrath.PrintAllPoints(dekstraAlgorim);
-            List<string> printPaths = PrintGrath.PrintAllMinPaths(dekstraAlgorim);
-            string otvet = "";
-
-            foreach(var item in printPoints)
+            catch
             {
-                otvet += item + "\n";
+                MessageBox.Show("Выберите корректную стартовую точку!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            foreach (var item in printPaths)
-            {
-                otvet += item + "\n";
-            }
-
-            MessageBox.Show(otvet);
-            WorkWithWord.SavePhoto(MyCanvas);
-            WorkWithWord.PrintPhoto(otvet);
         }
 
         private void Text(Point p)
@@ -151,6 +158,10 @@ namespace DekstraApp.Views
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
+            MyCanvas.Children.Clear();
+            PointsList.Items.Clear();
+            EdgesList.Items.Clear();
+
             var alg = WorkWithExcel.Import("Spisok.xlsx");
             foreach (var item in alg.points.ToList())
             {
@@ -232,7 +243,7 @@ namespace DekstraApp.Views
                     Text(a);
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Выберите корректное ребро!","Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -305,7 +316,7 @@ namespace DekstraApp.Views
                 itemChange.Weight = Convert.ToInt32(ChangeBox.Text);
                 Load();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Введите длину!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
