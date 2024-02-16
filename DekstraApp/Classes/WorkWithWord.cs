@@ -11,6 +11,7 @@ using System.Windows.Media;
 using Xceed.Words.NET;
 using Xceed.Document.NET;
 using Image = Xceed.Document.NET.Image;
+using Microsoft.Win32;
 
 namespace DekstraApp.Classes
 {
@@ -36,7 +37,9 @@ namespace DekstraApp.Classes
         public static void PrintPhoto(string a)
         {
             var myImageFullPath = "logo.png";
-            using (DocX document = DocX.Create(@"Otvet.docx"))
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.ShowDialog();
+            using (DocX document = DocX.Create(openFileDialog.FileName))
             {
                 // Add an image into the document.    
                 Image image = document.AddImage(myImageFullPath);

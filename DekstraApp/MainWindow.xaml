@@ -8,6 +8,14 @@
         Icon="/icon.ico"
         Title="Дейкстра" Height="450" Width="800">
     <Grid>
-        <Frame x:Name="MainFrame"/>
+        <StackPanel>
+            <Menu>
+                <MenuItem Header="О разработчиках" x:Name="DeveloperMenu" Click="DeveloperMenu_Click"/>
+                <MenuItem Header="Справка" x:Name="HelpMenu" Click="HelpMenu_Click"/>
+            </Menu>
+        </StackPanel>
+        <StackPanel Margin="20">
+            <Frame x:Name="MainFrame"/>
+        </StackPanel>
     </Grid>
 </Window>

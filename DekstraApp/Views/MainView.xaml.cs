@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using DekstraAlgorithm;
 using Point = DekstraAlgorithm.Point;
 using Microsoft.Win32;
+using System.Text.RegularExpressions;
 
 namespace DekstraApp.Views
 {
@@ -335,10 +336,11 @@ namespace DekstraApp.Views
 
         private void TextBlock_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!Char.IsDigit(e.Text, 0))
-            {
-                e.Handled = true;
-            }
+            var tb = (TextBox)sender;
+            var text = tb.Text.Insert(tb.CaretIndex, e.Text);
+
+            Regex _numMatch = new Regex(@"^((?:[0-9]\d*)|(\d+\.)|(?:(?=[\d.]+)(?:[0-9]\d*|0)\.\d{0,2}))$");
+            e.Handled = !Regex.IsMatch(text, _numMatch.ToString());
         }
     }
 }
