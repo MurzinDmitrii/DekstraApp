@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DekstraAlgorithm;
 using Point = DekstraAlgorithm.Point;
+using Microsoft.Win32;
 
 namespace DekstraApp.Views
 {
@@ -158,21 +159,31 @@ namespace DekstraApp.Views
 
         private void LoadButton_Click(object sender, RoutedEventArgs e)
         {
-            MyCanvas.Children.Clear();
-            PointsList.Items.Clear();
-            EdgesList.Items.Clear();
+            try
+            {
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.ShowDialog();
 
-            var alg = WorkWithExcel.Import("Spisok.xlsx");
-            foreach (var item in alg.points.ToList())
-            {
-                PointsList.Items.Add(item);
+                MyCanvas.Children.Clear();
+                PointsList.Items.Clear();
+                EdgesList.Items.Clear();
+
+                var alg = WorkWithExcel.Import(openFileDialog.FileName);
+                foreach (var item in alg.points.ToList())
+                {
+                    PointsList.Items.Add(item);
+                }
+                foreach (var item in alg.rebra.ToList())
+                {
+                    EdgesList.Items.Add(item);
+                }
+                name = PointsList.Items.Count;
+                Load();
             }
-            foreach (var item in alg.rebra.ToList())
+            catch
             {
-                EdgesList.Items.Add(item);
+                MessageBox.Show("Выберите корректный файл!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            name = PointsList.Items.Count;
-            Load();
         }
 
         private void DeleteMenu_Click(object sender, RoutedEventArgs e)
