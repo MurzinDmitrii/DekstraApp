@@ -34,7 +34,5 @@ namespace DekstraAlgorithm
         public Point()
         {
         }
-
-
     }
 }

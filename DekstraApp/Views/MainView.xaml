@@ -8,69 +8,71 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainView">
 
-    <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="x:" Margin="5"/>
-                <TextBox x:Name="xBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
-                <TextBlock Text="y:" Margin="5"/>
-                <TextBox x:Name="yBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
-                <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" Margin="5"/>
-                <TextBlock Text="Начальная точка" Margin="5"/>
-                <TextBox x:Name="BeginPointBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
-                <Button x:Name="DekstraButton" Content="Посчитать" Click="DekstraButton_Click"  Margin="5"/>
-                <Button x:Name="LoadButton" Content="Загрузить" Click="LoadButton_Click"  Margin="5"/>
-                <TextBlock Text="Изменение длинны" Margin="5"/>
-                <TextBox x:Name="ChangeBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <StackPanel Width="300" Height="300" Margin="10" Background="AliceBlue">
-                    <Viewbox>
-                        <StackPanel x:Name="MyCanvasPanel" Width="{Binding MyCanvasWidth}" Height="{Binding MyCanvasHeight}">
-                            <Canvas x:Name="MyCanvas">
+    <Viewbox>
+        <Grid>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="x:" Margin="5"/>
+                    <TextBox x:Name="xBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
+                    <TextBlock Text="y:" Margin="5"/>
+                    <TextBox x:Name="yBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
+                    <Button x:Name="AddButton" Content="Добавить" Margin="5"/>
+                    <TextBlock Text="Начальная точка" Margin="5"/>
+                    <TextBox x:Name="BeginPointBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
+                    <Button x:Name="DekstraButton" Content="Посчитать" Margin="5"/>
+                    <Button x:Name="LoadButton" Content="Загрузить" Margin="5"/>
+                    <TextBlock Text="Изменение длинны" Margin="5"/>
+                    <TextBox x:Name="ChangeBox" PreviewTextInput="TextBlock_PreviewTextInput" Margin="5" Width="50"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel Width="300" Height="300" Margin="10" Background="AliceBlue">
+                        <Viewbox>
+                            <StackPanel x:Name="MyCanvasPanel" Width="{Binding MyCanvasWidth}" Height="{Binding MyCanvasHeight}">
+                                <Canvas x:Name="MyCanvas">
 
-                            </Canvas>
-                        </StackPanel>
-                    </Viewbox>
-                </StackPanel>
-                <StackPanel>
-                    <ListView x:Name="PointsList" Margin="10" Width="200" Height="300">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Name}" Margin="5"/>
-                                    <StackPanel.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem x:Name="DeleteMenu" Header="Удалить" Click="DeleteMenu_Click"/>
-                                            <MenuItem x:Name="ChooseMenu" Header="Выбрать точку" Click="ChooseMenu_Click"/>
-                                            <MenuItem x:Name="JoinMenu" Header="Соединить" Click="JoinMenu_Click"/>
-                                        </ContextMenu>
-                                    </StackPanel.ContextMenu>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackPanel>
-                <StackPanel>
-                    <ListView x:Name="EdgesList" Margin="10" Width="200" Height="300">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding FirstPoint.Name}" Margin="5"/>
-                                    <TextBlock Text=" - " Margin="5"/>
-                                    <TextBlock Text="{Binding SecondPoint.Name}" Margin="5"/>
-                                    <StackPanel.ContextMenu>
-                                        <ContextMenu>
-                                            <MenuItem x:Name="DeleteEdgeMenu" Header="Удалить" Click="DeleteEdgeMenu_Click"/>
-                                            <MenuItem x:Name="ChangeMenu" Header="Поменять значение" Click="ChangeMenu_Click"/>
-                                        </ContextMenu>
-                                    </StackPanel.ContextMenu>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                                </Canvas>
+                            </StackPanel>
+                        </Viewbox>
+                    </StackPanel>
+                    <StackPanel>
+                        <ListView x:Name="PointsList" Margin="10" Width="200" Height="300">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" Margin="5"/>
+                                        <StackPanel.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem x:Name="DeleteMenu" Header="Удалить"/>
+                                                <MenuItem x:Name="ChooseMenu" Header="Выбрать точку"/>
+                                                <MenuItem x:Name="JoinMenu" Header="Соединить"/>
+                                            </ContextMenu>
+                                        </StackPanel.ContextMenu>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                    <StackPanel>
+                        <ListView x:Name="EdgesList" Margin="10" Width="200" Height="300">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding FirstPoint.Name}" Margin="5"/>
+                                        <TextBlock Text=" - " Margin="5"/>
+                                        <TextBlock Text="{Binding SecondPoint.Name}" Margin="5"/>
+                                        <StackPanel.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem x:Name="DeleteEdgeMenu" Header="Удалить"/>
+                                                <MenuItem x:Name="ChangeMenu" Header="Поменять значение"/>
+                                            </ContextMenu>
+                                        </StackPanel.ContextMenu>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
-    </Grid>
+        </Grid>
+    </Viewbox>
 </Page>

@@ -5427,11 +5427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DekstraApp\\DekstraApp.csproj",
+      "projectUniqueName": "C:\\Users\\Dmitrii\\Desktop\\Проекты\\DekstraApp\\DekstraApp\\DekstraApp.csproj",
       "projectName": "DekstraApp",
-      "projectPath": "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DekstraApp\\DekstraApp.csproj",
+      "projectPath": "C:\\Users\\Dmitrii\\Desktop\\Проекты\\DekstraApp\\DekstraApp\\DekstraApp.csproj",
       "packagesPath": "C:\\Users\\Dmitrii\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DekstraApp\\obj\\",
+      "outputPath": "C:\\Users\\Dmitrii\\Desktop\\Проекты\\DekstraApp\\DekstraApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5452,8 +5452,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DijkstraAlgorithm\\DekstraAlgorithm.csproj": {
-              "projectPath": "C:\\Users\\Dmitrii\\Desktop\\УП мо мат.методам\\DijkstraAlgorithm\\DekstraAlgorithm.csproj"
+            "C:\\Users\\Dmitrii\\Desktop\\Проекты\\DekstraApp\\DijkstraAlgorithm\\DekstraAlgorithm.csproj": {
+              "projectPath": "C:\\Users\\Dmitrii\\Desktop\\Проекты\\DekstraApp\\DijkstraAlgorithm\\DekstraAlgorithm.csproj"
             }
           }
         }
