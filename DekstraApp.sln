@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DekstraAlgorithm", "DijkstraAlgorithm\DekstraAlgorithm.csproj", "{72574210-E88B-441A-B4E6-FA03CEEE7A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DekstraAlgorithm", "DijkstraAlgorithm\DekstraAlgorithm.csproj", "{72574210-E88B-441A-B4E6-FA03CEEE7A97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DekstraApp", "DekstraApp\DekstraApp.csproj", "{4C02A576-742E-438C-975B-74AA35628A89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DekstraApp", "DekstraApp\DekstraApp.csproj", "{4C02A576-742E-438C-975B-74AA35628A89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DekstraTests", "DekstraTests\DekstraTests.csproj", "{E03865DB-1F54-4308-802E-EAEB9B740C42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4C02A576-742E-438C-975B-74AA35628A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C02A576-742E-438C-975B-74AA35628A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C02A576-742E-438C-975B-74AA35628A89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03865DB-1F54-4308-802E-EAEB9B740C42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03865DB-1F54-4308-802E-EAEB9B740C42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03865DB-1F54-4308-802E-EAEB9B740C42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03865DB-1F54-4308-802E-EAEB9B740C42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
