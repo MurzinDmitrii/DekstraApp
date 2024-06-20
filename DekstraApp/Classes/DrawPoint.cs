@@ -7,11 +7,14 @@ using System.Windows.Shapes;
 
 namespace DekstraApp.Classes
 {
-    public class DrawPoint : DrawFigure, IDraw
+    public class DrawPoint : IDraw
     {
-        public DrawPoint(int x, int y) : base(x, y)
+        public int X { get; set; }
+        public int Y { get; set; }
+        public DrawPoint(int x, int y)
         {
-
+            this.X = x;
+            this.Y = y;
         }
 
         public Line Draw()

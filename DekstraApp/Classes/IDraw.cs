@@ -9,6 +9,8 @@ namespace DekstraApp.Classes
 {
     internal interface IDraw
     {
+        public int X { get; set; }
+        public int Y { get; set; }
         public Line Draw();
     }
 }
