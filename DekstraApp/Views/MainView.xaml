@@ -27,7 +27,7 @@
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Width="300" Height="300" Margin="10" Background="AliceBlue">
                         <Viewbox>
-                            <StackPanel x:Name="MyCanvasPanel" Width="{Binding MyCanvasWidth}" Height="{Binding MyCanvasHeight}">
+                            <StackPanel x:Name="MyCanvasPanel" Width="100" Height="100">
                                 <Canvas x:Name="MyCanvas">
 
                                 </Canvas>
